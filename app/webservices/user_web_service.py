@@ -4,7 +4,7 @@ from app.config.database import SessionLocal
 from app.services.user_service import UserService
 from app.dtos.users import UserCreateDTO, UserResponseDTO
 
-router = APIRouter(prefix="/api", tags=["users"])
+router = APIRouter(prefix="/users", tags=["users"])
 
 def get_db():
     db = SessionLocal()
