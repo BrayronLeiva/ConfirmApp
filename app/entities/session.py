@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime, Text
+from sqlalchemy import Column, String, Integer, DateTime, Text, Boolean
 from datetime import datetime, timezone
 from app.config.database import Base
 
@@ -12,3 +12,4 @@ class Session(Base):
     level = Column(Integer, nullable=False)
     qr_code = Column(String, nullable=True)
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    enable = Column(Boolean, default=False)

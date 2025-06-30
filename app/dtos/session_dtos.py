@@ -8,6 +8,7 @@ class SessionCreateDTO(BaseModel):
     scheduled_at: datetime
     level: int
     qr_code: Optional[str]
+    enable: bool
 
 class SessionResponseDTO(BaseModel):
     id: int
@@ -16,5 +17,6 @@ class SessionResponseDTO(BaseModel):
     scheduled_at: datetime
     level: int
     qr_code: Optional[str]
+    enable: bool
 
     model_config = ConfigDict(from_attributes=True)

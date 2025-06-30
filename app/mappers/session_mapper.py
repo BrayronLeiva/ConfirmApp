@@ -7,5 +7,6 @@ def session_create_dto_to_entity(dto: SessionCreateDTO) -> Session:
         summary=dto.summary,
         scheduled_at=dto.scheduled_at,
         level=dto.level,
-        qr_code=dto.qr_code
+        qr_code=dto.qr_code,
+        enable = dto.enable
     )
