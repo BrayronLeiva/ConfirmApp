@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from app.config.database import SessionLocal
 from sqlalchemy.orm import Session
 
-router = APIRouter(prefix="/sessions", tags=["sessions"])
+router = APIRouter(prefix="/v1/sessions", tags=["sessions"])
 
 def get_db():
     db = SessionLocal()

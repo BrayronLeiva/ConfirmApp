@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.config.database import SessionLocal
 from app.services.user_service import UserService
-from app.dtos.users import UserCreateDTO, UserResponseDTO
+from app.dtos.users import UserCreateDTO, UserResponseDTO, AuthRequestDTO, AuthResponseDTO
 
-router = APIRouter(prefix="/users", tags=["users"])
+router = APIRouter(prefix="/v1/users", tags=["users"])
 
 def get_db():
     db = SessionLocal()
@@ -17,8 +17,10 @@ def get_db():
 def register_user(dto: UserCreateDTO, db: Session = Depends(get_db)):
     return UserService.register(db, dto)
 
-@router.post("/login")
-def login(email: str, password: str, db: Session = Depends(get_db)):
-    token = UserService.login(db, email, password)
-    return {"access_token": token, "token_type": "bearer"}
+@router.post("/login", response_model=AuthResponseDTO)
+def login(dto: AuthRequestDTO, db: Session = Depends(get_db)):
+    return UserService.login(db, dto)
 
+@router.get("/{user_id}", response_model=UserResponseDTO)
+def get_user_by_id(user_id: int, db: Session = Depends(get_db)):
+    return UserService.get_user_by_id(db, user_id)

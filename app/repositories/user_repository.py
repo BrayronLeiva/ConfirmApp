@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from app.entities.user import User
 
 class UserRepository:
@@ -13,3 +13,7 @@ class UserRepository:
         db.commit()
         db.refresh(user)
         return user
+
+    @staticmethod
+    def get_by_id(db: Session, id: int) -> User | None:
+        return db.query(User).options(joinedload(User.avatar)).filter(User.id == id).first()
