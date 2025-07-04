@@ -6,3 +6,7 @@ class AvatarRepository:
     @staticmethod
     def list_active(db: Session) -> list[Avatar]:
         return db.query(Avatar).filter(Avatar.is_active == True).all()
+
+    @staticmethod
+    def get_by_id(db: Session, avatar_id: int) -> Avatar | None:
+        return db.query(Avatar).filter(Avatar.id == avatar_id).first()

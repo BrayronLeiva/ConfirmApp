@@ -12,9 +12,17 @@ class AvatarService:
         return [AvatarResponseDTO.model_validate(a) for a in avatars]
     
     @staticmethod
-    def create_avatar(db: DBSession, dto: AvatarCreateDTO) -> AvatarResponseDTO:
+    def create(db: DBSession, dto: AvatarCreateDTO) -> AvatarResponseDTO:
         avatar = create_avatar_entity(dto)
         db.add(avatar)
         db.commit()
         db.refresh(avatar)
         return AvatarResponseDTO.model_validate(avatar)
+    
+
+    @staticmethod
+    def get_by_id(db: DBSession, avatar_id: int) -> AvatarResponseDTO:
+        session = AvatarRepository.get_by_id(db, avatar_id)
+        if not session:
+            raise Exception("Session not found")
+        return AvatarResponseDTO.model_validate(session)

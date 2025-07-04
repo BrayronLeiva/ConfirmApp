@@ -4,7 +4,7 @@ from app.services.session_service import SessionService
 from fastapi import APIRouter, Depends, HTTPException
 from app.config.database import SessionLocal
 from sqlalchemy.orm import Session
-
+from app.dtos.users import UserUpdatePointsDto 
 router = APIRouter(prefix="/v1/sessions", tags=["sessions"])
 
 def get_db():
@@ -14,7 +14,7 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/create", response_model=SessionResponseDTO)
+@router.post("", response_model=SessionResponseDTO)
 def create_session(dto: SessionCreateDTO, db: Session = Depends(get_db)):
     return SessionService.create(db, dto)
 

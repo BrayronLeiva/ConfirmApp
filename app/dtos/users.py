@@ -6,6 +6,7 @@ class UserCreateDTO(BaseModel):
     name: str
     username: str
     password: str
+    rol: Optional[UserRole] = UserRole.YOUNG
 
 class UserResponseDTO(BaseModel):
     id: int
@@ -26,3 +27,10 @@ class AuthResponseDTO(BaseModel):
     access_token: str
     #token_type: str = "bearer"
     user_id: int
+
+
+class UserUpdateAvatarDto(BaseModel):
+    avatar_id: int
+
+class UserUpdatePointsDto(BaseModel):
+    total_points: int

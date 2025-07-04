@@ -7,4 +7,5 @@ def user_create_dto_to_entity(dto: UserCreateDTO) -> User:
         name=dto.name,
         username=dto.username,
         password_hash=bcrypt.hash(dto.password),
+        rol=dto.rol
     )

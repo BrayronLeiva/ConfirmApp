@@ -4,7 +4,7 @@ from app.config.database import SessionLocal
 from app.dtos.attendance_dtos import AttendanceCreateDTO, AttendanceResponseDTO
 from app.services.attendance_service import AttendanceService
 
-router = APIRouter(prefix="/attendances", tags=["attendances"])
+router = APIRouter(prefix="/v1/attendances", tags=["attendances"])
 
 def get_db():
     db = SessionLocal()
@@ -13,7 +13,7 @@ def get_db():
     finally:
         db.close()
 
-@router.post("/create", response_model=AttendanceResponseDTO)
+@router.post("", response_model=AttendanceResponseDTO)
 def register_attendance(dto: AttendanceCreateDTO, db: Session = Depends(get_db)):
     return AttendanceService.register_attendance(db, dto)
 
