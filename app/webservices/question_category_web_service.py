@@ -13,7 +13,7 @@ def get_db():
         db.close()
 
 
-router = APIRouter(prefix="/v1/questionCategory", tags=["questionCategory"])
+router = APIRouter(prefix="/v1/question-categories", tags=["question-categories"])
 
 @router.get("", response_model=list[QuestionCategoryDTO])
 def get_categories(is_active: Optional[bool] = None, db: Session = Depends(get_db)):

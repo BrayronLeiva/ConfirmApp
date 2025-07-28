@@ -5,7 +5,7 @@ from app.services.game_question_service import GameQuestionService
 from app.dtos.game_question_dtos import GameQuestionDTO, GameQuestionCreateDTO
 from typing import Optional
 
-router = APIRouter(prefix="/v1/gameQuestions", tags=["gameQuestions"])
+router = APIRouter(prefix="/v1/game-questions", tags=["game-questions"])
 
 def get_db():
     db = SessionLocal()
