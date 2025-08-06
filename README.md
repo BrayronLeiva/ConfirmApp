@@ -34,7 +34,7 @@ DTOs (Pydantic)
 |---------------------|------------------------------------------------------------------------------|
 | **API Layer**        | FastAPI, APIRouter, Swagger UI                                               |
 | **Service Layer**    | Custom service classes for business logic                                    |
-| **Data Layer**       | SQLAlchemy, SQLite (can be switched), Alembic (optional)                     |
+| **Data Layer**       | SQLAlchemy                     |
 | **Security**         | JWT, OAuth2PasswordBearer, Password Hashing (bcrypt)                         |
 | **Schemas/DTOs**     | Pydantic models for request/response validation                              |
 | **Dependency Mgmt.** | `requirements.txt`, virtualenv, pip    
