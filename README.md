@@ -1,29 +1,37 @@
-# ConfirmApp
+# 🧩 ConfirmApp — Backend API for Managing Attendance, Sessions & Learning Activities
 
-**ConfirmApp** is a backend application built with Python that provides a RESTful API to manage users, sessions, attendance, game questions, and more. It uses FastAPI as the main web framework, SQLAlchemy for database interaction, and JWT for authentication.
+Backend system to manage users, sessions, attendance, and game-like learning features. Designed to support educational platforms through modern API practices, modular structure, and secure authentication using JWT.
 
-## 🚀 Technologies Used
+## 🚀 Key Features
 
-- Python 3.12
-- [FastAPI](https://fastapi.tiangolo.com/)
-- [SQLAlchemy](https://www.sqlalchemy.org/)
-- [Pydantic](https://docs.pydantic.dev/)
-- [JWT (JSON Web Tokens)](https://jwt.io/)
-- SQLite (default database, can be replaced)
+### 👨‍🎓 For Students
+- Token-based authentication (JWT)
+- Game-based questions and categories
+- Attendance tracking linked to sessions
 
-## 📁 Project Structure
+### 🏢 For Administrators
+- User and role management
+- Session and attendance monitoring
+- API-based data access for frontend integration
 
-ConfirmApp/
-├── main.py # Entry point
-├── requirements.txt # Python dependencies
-├── app/
-│ ├── config/ # Database and security config
-│ │ ├── database.py
-│ │ ├── init_db.py
-│ │ └── security/
-│ │ └── jwt_utils.py
-│ ├── dtos/ # Data Transfer Objects (schemas)
-│ ├── models/ # Database models
-│ ├── repositories/ # Data access logic
-│ ├── routers/ # API endpoints
-│ └── services/ # Business logic
+## 🏗️ Technical Architecture
+
+### Layered Design
+API (Routers) → Services → Repositories → Models/Database
+↑
+DTOs (Pydantic)
+
+bash
+Copiar
+Editar
+
+### Technology Stack
+
+| Layer               | Technologies                                                                 |
+|---------------------|------------------------------------------------------------------------------|
+| **API Layer**        | FastAPI, APIRouter, Swagger UI                                               |
+| **Service Layer**    | Custom service classes for business logic                                    |
+| **Data Layer**       | SQLAlchemy, SQLite (can be switched), Alembic (optional)                     |
+| **Security**         | JWT, OAuth2PasswordBearer, Password Hashing (bcrypt)                         |
+| **Schemas/DTOs**     | Pydantic models for request/response validation                              |
+| **Dependency Mgmt.** | `requirements.txt`, virtualenv, pip    
