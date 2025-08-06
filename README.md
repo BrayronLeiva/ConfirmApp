@@ -27,9 +27,6 @@ API (Routers) → Services → Repositories → Models/Database
 ↑
 DTOs (Pydantic)
 
-bash
-Copiar
-Editar
 
 ### Technology Stack
 
