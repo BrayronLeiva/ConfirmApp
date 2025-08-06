@@ -1,6 +1,12 @@
-# 🧩 ConfirmApp — Backend API for Managing Attendance, Sessions & Learning Activities
+# 🧩 ConfirmApp — Backend API
 
 Backend system to manage users, sessions, attendance, and game-like learning features. Designed to support educational platforms through modern API practices, modular structure, and secure authentication using JWT.
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/ORM-SQLAlchemy-FF6F00?style=for-the-badge)
+![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Validation-Pydantic-0696D7?style=for-the-badge)
 
 ## 🚀 Key Features
 
